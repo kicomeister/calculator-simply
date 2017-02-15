@@ -1,0 +1,21 @@
+{
+  "name": "calculator-simply-app",
+  "version": "4.0.2",
+  "description": "> It's a very lightweight calculator. Just for fun.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kicomeister/calculator-simply.git"
+  },
+  "author": "kicomeister",
+  "license": "Apache-2.0.0",
+  "keywords": [
+    "ecosystem:phonegap",
+    "ecosystem:cordova",
+    "cordova:template",
+    "phonegap:template"
+  ],
+  "bugs": {
+    "url": "https://github.com/kicomeister/calculator-simply/issues"
+  },
+  "homepage": "https://github.com/kicomeister/calculator-simply"
+}

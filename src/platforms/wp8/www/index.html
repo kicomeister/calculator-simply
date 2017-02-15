@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' 'unsafe-eval' 'unsafe-inline';"/>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>Calculator, simply</title>
+</head>
+
+<body>
+<div class="calculator" id="calculator">
+    <div id="screen">
+        <div id="expression"></div>
+        <div id="result"></div>
+    </div>
+    <div id="keys">
+        <button class="button clear-all half">C</button>
+        <button class="button clear-current half">CE</button>
+        <button class="button number">7</button>
+        <button class="button number">8</button>
+        <button class="button number">9</button>
+        <button class="button expression">&times;</button>
+        <button class="button number">4</button>
+        <button class="button number">5</button>
+        <button class="button number">6</button>
+        <button class="button expression">&divide;</button>
+        <button class="button number">1</button>
+        <button class="button number">2</button>
+        <button class="button number">3</button>
+        <button class="button expression">+</button>
+        <button class="button calculate">&#x3D;</button>
+        <button class="button number">0</button>
+        <button class="button point">.</button>
+        <button class="button expression">-</button>
+    </div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    calculator.initialize();
+</script>
+</body>
+
+</html>

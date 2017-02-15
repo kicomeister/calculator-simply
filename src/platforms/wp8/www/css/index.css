@@ -1,0 +1,217 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#929487;
+    background-image:linear-gradient(top, #929487 0%, #727561 51%);
+    background-image:-webkit-linear-gradient(top, #929487 0%, #727561 51%);
+    background-image:-ms-linear-gradient(top, #929487 0%, #727561 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #929487),
+        color-stop(0.51, #727561)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+    position: absolute;
+}
+
+
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.calculator{
+    position: relative;
+    height: 100%;
+}
+
+#keys{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.button{
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    border: 0;
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(31,31,31,0.5);
+    -moz-box-shadow: inset 0px 0px 0px 1px rgba(31,31,31,0.5);
+    box-shadow: inset 0px 0px 0px 1px rgba(31,31,31,0.5);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+    margin: 0;
+}
+
+.normal .button{
+    width: 25%;
+    font-size: 20px;
+    line-height: 28px;
+    padding: 10px 0;
+}
+
+.wide .button{
+    width: 25%;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 6px 0;
+}
+
+
+.button:active, .button:visited, .button:hover, .button:focus{
+    outline: none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    user-select:none;
+}
+
+.button.half{
+    background: rgba(255,255,255,0.5);
+}
+
+ .button.half{
+    width: 50%;
+}
+
+ .button.half:active{
+    background: rgba(255,255,255,0.82);
+}
+
+.button.number, .button.point{
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+}
+
+.button.number:active, .button.point:active{
+    color: #000;
+    background: rgba(255,255,255,0.8);
+}
+
+.button.calculate{
+    background: rgba(251, 46, 46, 0.82);
+    color: #fff;
+}
+
+.button.calculate:active{
+    background: rgba(251, 46, 46, 0.95);
+}
+
+.button.expression{
+    color: #fff;
+    background: rgba(118,153,212,0.5);
+}
+
+.button.expression:active{
+    background: rgba(118,153,212,0.82);
+}
+
+.normal .button.wide{
+    display: none;
+}
+
+#screen{
+    text-align: right;
+}
+
+#result{
+    padding: 15px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+#expression{
+    padding: 15px 15px 0 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: break-word;
+}
